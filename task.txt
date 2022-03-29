@@ -1,0 +1,25 @@
+task1
+
+1.
+var a;
+var b;
+var c;
+var d;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+output
+undefined
+undefined
+undefined
+undefined
+
+
+2.
+var myvar = 1;
+console.log("myvar:",myvar);
+
+output:
+muvar:1

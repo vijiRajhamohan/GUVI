@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM</title>
+</head>
+
+<body>
+  <h1>How to compare two JSON have the same properties without order</h1>
+  <h1>Display All The Country Flags In Console</h1>
+  <h1>Countries Name, Region, Sub Region Population</h1>
+  <P id="dhamu"></P>
+//How to compare two JSON have the same properties without order
+  <script>
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200)
+        console.log(this.responseType);
+      var obj1 = JSON.stringify(this.responseText);
+      var obj2 = JSON.stringify(this.responseText);
+      let result = Object.entries(obj1).tostring==Object.entries(obj2).tostring;
+      console.log("Compare JSON Object Order or Disorder :-",result);
+    }
+    http.open("GET", "https://restcountries.com/v3.1/all");
+    http.send();
+  </script>
+//Display All The Country Flags In Console
+  <script>
+      var http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200)
+        console.log(this.responseType);
+      var obj = JSON.parse(this.responseText);
+      let task = []
+
+      obj.forEach((i) => {
+        task.push(i.flags.png)
+      });
+      console.log(task);
+      task.forEach((img) => {
+        console.log('%c ', 'font-size:600px; background:url(' + img + ') no-repeat;');
+      })
+    }
+    http.open("GET", "https://restcountries.com/v3.1/all");
+    http.send();
+  </script>
+//Countries Name, Region, Sub Region Population
+  <script>
+  
+    var http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200)
+        console.log(this.responseType);
+      var obj = JSON.parse(this.responseText);
+// Display country:-Name,Population,Region,SubRegion
+      obj.forEach((i) => {
+        console.log("Name of Country :", i.name.common)
+        console.log("Population :", i.population)
+        console.log("Region :", i.region)
+        console.log("SubRegion :", i.subregion)
+        console.log("==============================================");
+
+      });
+
+    }
+    http.open("GET", "https://restcountries.com/v3.1/all");
+    http.send();
+  </script>
+</body>
+
+</html>
