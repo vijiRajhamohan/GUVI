@@ -1,0 +1,385 @@
+Do the below programs in anonymous function & IIFE
+
+a. Print odd numbers in an array
+    
+
+(i)anonymous function
+
+var arr=[1,21,3,43,5,6];
+var a =(function (arr) {
+  var odd = [];
+  for (var x of arr){
+    if (x % 2 == 1){
+      odd.push(x);
+    }
+  }
+  console.log(odd);
+})
+a(arr)
+
+output:
+[ 1, 21, 3, 43, 5 ]
+
+
+(ii)IIFE
+
+var arr=[1,21,3,43,5,6];
+((arr) => {
+  var odd = [];
+  for (var x of arr){
+    if (x % 2 == 1){
+      odd.push(x);
+    }
+  }
+  console.log(odd);
+})(arr)
+
+output:
+[ 1, 21, 3, 43, 5 ]
+
+
+
+
+b.Convert all the strings to title caps in a string array
+
+(i)anonymous function
+
+var arr=["viji","janhavi","jamuna","bhagirathan","rajhamohan"]
+var str = (function(arr) {
+for(var x of arr){
+  for (var y of x){
+  var temp = x.slice(0,1).toUpperCase() + x.slice(1, x.length);
+}console.log(temp)
+}
+})
+str(arr)
+
+
+output:
+
+Viji
+Janhavi
+Jamuna
+Bhagirathan
+Rajhamohan
+
+
+
+(ii)IIFE
+
+var arr=["viji","janhavi","jamuna","bhagirathan","rajhamohan"];
+ ((arr) => {
+for(var x of arr){
+  for (var y of x){
+  var temp = x.slice(0,1).toUpperCase() + x.slice(1, x.length);
+}console.log(temp);
+}
+})(arr)
+
+
+output:
+
+Viji
+Janhavi
+Jamuna
+Bhagirathan
+Rajhamohan
+
+
+
+c.Sum of all numbers in an array
+
+(i)anonymous function
+
+var arr=[20,44,56,78,99];
+var temp=0;
+var sum =(function (arr) {
+  for (var x of arr){
+    temp += x;
+ }console.log(temp);
+})
+sum(arr);
+
+output:
+297
+
+
+(ii)IIFE
+var arr=[20,44,56,78,99];
+var temp=0;
+( (arr) => {
+  for (var x of arr){
+    temp += x;
+ }console.log(temp);
+})(arr);
+
+output:
+297
+
+
+
+
+d.Return all the prime numbers in an array
+
+(i)anonymous function
+
+var arr=[1,3,4,5,6,7,8,9,10];
+var prime=[];
+var a=(function(arr){
+  for(var x of arr){
+    if(x%2!==0 && x !== 1){
+      prime.push(x)
+    }
+  }console.log(prime);
+})
+a(arr)
+
+output:
+[ 3, 5, 7, 9 ]
+
+
+
+(ii)IIFE
+
+var arr=[1,3,4,5,6,7,8,9,10];
+var prime=[];
+((arr)=>{
+  for(var x of arr){
+    if(x%2!==0 && x !== 1){
+      prime.push(x)
+    }
+  }console.log(prime);
+})(arr)
+
+output:
+[ 3, 5, 7, 9 ]
+
+
+
+
+e.Return all the palindromes in an array
+
+(i)anonymous function
+
+var arr = ["345543","madam","hello","123321"]
+var pal = [];
+var reverse = function (str) {
+    return str.split("").reverse().join("")
+}
+for (var i = 0; i < arr.length; i++) {
+    var reversedarray = reverse(arr[i])
+    if (arr[i] == reversedarray) {
+        pal.push(arr[i])
+    }
+}
+console.log(pal)
+
+
+output:
+[ '345543', 'madam', '123321' ]
+
+
+(ii)IIFE
+
+
+var arr = ["345543","madam","hello","123321"]
+var pal = [];
+((arr) => {
+  var reverse = function (str) {
+    return str.split("").reverse().join("")
+}
+for (var i = 0; i < arr.length; i++) {
+    var reversedarray = reverse(arr[i])
+    if (arr[i] == reversedarray) {
+        pal.push(arr[i])
+    }
+}
+console.log(pal)
+
+})(arr)
+
+output:
+
+[ '345543', 'madam', '123321' ]
+
+
+
+
+f.Return median of two sorted arrays of the same size
+(i)anonymous function
+
+var ar1 = [1, 12, 5, 26, 38];
+var ar2 = [2, 1, 17, 30, 45];
+var n1 = ar1.length;
+var n2 = ar2.length;
+var n=n1;
+var s=(function(){
+    var i = 0; 
+    var j = 0; 
+    var count;
+    var m1 = -1, m2 = -1;
+    for (count = 0; count <= n; count++)
+    {       
+        if (i == n)
+        {
+            m1 = m2;
+            m2 = ar2[0];
+            break;
+        }
+        else if (j == n)
+        {
+            m1 = m2;
+            m2 = ar1[0];
+            break;
+        }
+   
+        if (ar1[i] <= ar2[j])
+        {
+            m1 = m2; 
+            m2 = ar1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2; 
+            m2 = ar2[j];
+            j++;
+        }
+    }
+
+
+    console.log((m1 + m2)/2)
+})
+console.log((ar1,ar2,n1))
+
+Output:
+11
+
+
+
+(ii)IIFE
+var ar1 = [1, 12, 5, 26, 38];
+var ar2 = [2, 1, 17, 30, 45];
+var n1 = ar1.length;
+var n2 = ar2.length;
+var n=n1;
+(function(){
+    var i = 0; 
+    var j = 0; 
+    var count;
+    var m1 = -1, m2 = -1;
+    for (count = 0; count <= n; count++)
+    {       
+        if (i == n)
+        {
+            m1 = m2;
+            m2 = ar2[0];
+            break;
+        }
+        else if (j == n)
+        {
+            m1 = m2;
+            m2 = ar1[0];
+            break;
+        }
+   
+        if (ar1[i] <= ar2[j])
+        {
+            m1 = m2; 
+            m2 = ar1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2; 
+            m2 = ar2[j];
+            j++;
+        }
+    }
+
+
+    console.log((m1 + m2)/2)
+})(ar1,ar2,n1)
+
+Output:
+11
+
+
+
+g.Remove duplicates from an array
+(i)anonymous function
+let chars = ['A', 'B', 'A', 'C', 'B'];
+let uniqueChars =(function(chars){
+  return [...new Set(chars)];
+}) 
+
+console.log(uniqueChars(chars));
+
+output:
+A B C
+
+
+(ii)IIFE
+let chars = ['A', 'B', 'A', 'C', 'B'];
+((chars)=>{
+  console.log(...new Set(chars));
+}) (chars)
+
+
+output:
+
+A B C
+
+
+h.Rotate an array by k times
+(i)anonymous function
+
+var arr=[1,2,3,4,5,6];
+
+var k=2;
+(function(){
+    
+    var res=[];
+    var n=arr.length;
+    k=k%n;
+    for(i=0;i<arr.length;i++){
+        if(i<k){
+        res[i]=arr[n-k+i]
+        }
+        else{
+            res[i]=arr[i-k]
+        }
+    }
+    console.log(res)
+
+
+})(arr,k)
+
+output:
+[ 4, 6, 1, 2, 3 ]
+
+
+
+(ii)IIFE
+
+var arr=[1,2,3,4,6];
+
+var k=2;
+((arr,k)=>{
+    
+    var res=[];
+    var n=arr.length;
+    k=k%n;
+    for(i=0;i<arr.length;i++){
+        if(i<k){
+        res[i]=arr[n-k+i]
+        }
+        else{
+            res[i]=arr[i-k]
+        }
+    }
+    console.log(res)
+})(arr,k)
+
+output:
+[ 4, 6, 1, 2, 3 ]

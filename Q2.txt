@@ -1,0 +1,102 @@
+a. Print odd numbers in an array
+    
+
+(i)arrow function
+
+var arr=[1,21,3,43,5,6];
+var a =((arr) => {
+  var odd = [];
+  for (var x of arr){
+    if (x % 2 == 1){
+      odd.push(x);
+    }
+  }
+  console.log(odd);
+})
+a(arr)
+
+output:
+[ 1, 21, 3, 43, 5 ]
+
+
+b.Convert all the strings to title caps in a string array
+
+(i)arrow function
+
+var arr=["viji","janhavi","jamuna","bhagirathan","rajhamohan"]
+var str = ((arr)=> {
+for(var x of arr){
+  for (var y of x){
+  var temp = x.slice(0,1).toUpperCase() + x.slice(1, x.length);
+}console.log(temp)
+}
+})
+str(arr)
+
+
+output:
+
+Viji
+Janhavi
+Jamuna
+Bhagirathan
+Rajhamohan
+
+
+
+c.Sum of all numbers in an array
+
+(i)arrow function
+
+var arr=[20,44,56,78,99];
+var temp=0;
+var sum =( (arr)=> {
+  for (var x of arr){
+    temp += x;
+ }console.log(temp);
+})
+sum(arr);
+
+output:
+297
+
+
+d.Return all the prime numbers in an array
+
+(i)arrow function
+
+var arr=[1,3,4,5,6,7,8,9,10];
+var prime=[];
+var a=((arr)=>{
+  for(var x of arr){
+    if(x%2!==0 && x !== 1){
+      prime.push(x)
+    }
+  }console.log(prime);
+})
+a(arr)
+
+output:
+[ 3, 5, 7, 9 ]
+
+
+e.Return all the palindromes in an array
+
+(i)anonymous function
+
+var arr = ["345543","madam","hello","123321"]
+var pal = [];
+var reverse = ( (str) =>{
+    return str.split("").reverse().join("")
+})
+for (var i = 0; i < arr.length; i++) {
+    var reversedarray = reverse(arr[i])
+    if (arr[i] == reversedarray) {
+        pal.push(arr[i])
+    }
+}
+console.log(pal)
+
+
+output:
+[ '345543', 'madam', '123321' ]
