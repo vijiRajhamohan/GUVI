@@ -1,0 +1,42 @@
+
+ *{
+    padding: 50;
+    margin: 50;
+
+}
+
+div{
+   justify-items: center;
+    background-color: aqua;
+    color: brown;
+    
+}.card{
+   
+    display: grid;
+    margin: 15px;
+    width:500px;
+    
+}
+.card-img{
+    
+    height: 300px;
+}
+
+.card-body{
+    background-color: coral;
+    display:grid;
+     grid-template-columns: 12fr 12fr ;
+}
+
+
+button:hover{
+    background-color: whitesmoke;
+    color: purple;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
